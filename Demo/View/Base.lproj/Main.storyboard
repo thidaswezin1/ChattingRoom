@@ -40,7 +40,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="QGV-he-Frb">
                                                 <rect key="frame" x="97.666666666666686" y="60.333333333333314" width="180" height="108"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="thida@1.com" borderStyle="roundedRect" placeholder="Your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nou-hJ-CHv">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nou-hJ-CHv">
                                                         <rect key="frame" x="0.0" y="0.0" width="180" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="MD6-6Y-817"/>
@@ -48,7 +48,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="111111" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWg-wM-CBg">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWg-wM-CBg">
                                                         <rect key="frame" x="0.0" y="74" width="180" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="CSo-af-nWH"/>
@@ -290,6 +290,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLM-rK-FQA">
                                         <rect key="frame" x="315" y="20" width="40" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="1FL-vw-htY"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Fn7-g7-hcm"/>
@@ -297,10 +298,12 @@
                                             <constraint firstAttribute="width" constant="40" id="hxH-nc-Zqe"/>
                                         </constraints>
                                         <color key="tintColor" name="BrandLightPurple"/>
-                                        <state key="normal" image="paperplane.fill" catalog="system"/>
+                                        <state key="normal" image="paperplane.fill" catalog="system">
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="XLM-rK-FQA" firstAttribute="leading" secondItem="m6U-aT-QWb" secondAttribute="trailing" constant="20" id="HPR-dC-hjU"/>
                                     <constraint firstAttribute="height" constant="60" id="LdF-qo-VLX"/>
@@ -323,13 +326,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="leS-UE-31J"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PZV-Yz-6Sx">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="LPf-QE-75G">
-                            <connections>
-                                <action selector="logoutPressed:" destination="wal-lH-CWY" id="lm0-FI-Hpz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="PZV-Yz-6Sx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCZ-iI-3HE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="nG1-Ud-Ek3">
