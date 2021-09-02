@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
                 if let e = error {
                     print(e.localizedDescription)
                 } else {
-                    self.performSegue(withIdentifier: "LoginToChattingRoom", sender: self)
+                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
                 }
              
             }

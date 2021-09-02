@@ -10,11 +10,22 @@ import UIKit
 import FirebaseAuth
 
 class ChatViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var message : [Message] = [
+    Message(sender: "Hla Hla", message: "HI Kyal Sin Theint"),
+    Message(sender: "Hla Hla", message: "I Love You."),
+    Message(sender: "Hla Hla", message: "Love")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Chatting Room"
         navigationItem.hidesBackButton = true
+        
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: K.nibName, bundle: nil), forCellReuseIdentifier: K.reuseableCell)
+        
     }
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
@@ -27,5 +38,20 @@ class ChatViewController: UIViewController {
           print("Error signing out: %@", signOutError)
         }
     }
+    
+}
+
+extension ChatViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return message.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reuseableCell, for: indexPath) as! MessageCell
+        
+        cell.label.text = message[indexPath.row].message
+        return cell
+    }
+    
     
 }
