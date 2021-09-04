@@ -17,6 +17,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     
     @IBOutlet weak var titleLabel: CLTypingLabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "Chatting Room"

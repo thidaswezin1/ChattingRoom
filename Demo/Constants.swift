@@ -12,6 +12,10 @@ struct K {
     static let nibName = "MessageCell"
     static let reuseableCell = "ReuseableCell"
     
+    struct MyColor {
+        static let pinkColor = "pinkColor"
+        static let lightPinkColor = "lightPinkColor"
+    }
     struct FStore {
         static let collectionName = "messages"
         static let senderField = "sender"

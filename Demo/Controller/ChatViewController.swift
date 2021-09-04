@@ -29,8 +29,8 @@ class ChatViewController: UIViewController {
         
     }
     
-    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
     
+    @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
         do {
           try Auth.auth().signOut()
             navigationController?.popViewController(animated: true)
@@ -48,6 +48,9 @@ class ChatViewController: UIViewController {
                     print("Error in saving document in firestore\(e)")
                 } else {
                     print("Successfully saved document.")
+                    DispatchQueue.main.async {
+                        self.messageTextField.text = ""
+                    }
                 }
             }
         }
@@ -71,6 +74,8 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                let indexPath = IndexPath(row: self.message.count-1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                             }
                         }
                     }
@@ -87,6 +92,17 @@ extension ChatViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reuseableCell, for: indexPath) as! MessageCell
+        
+        let msg = message[indexPath.row]
+        if msg.sender == Auth.auth().currentUser?.email {
+            cell.youImageView.isHidden = true
+            cell.meImageView.isHidden = false
+            cell.messageView.backgroundColor = UIColor(named: K.MyColor.pinkColor)
+        } else {
+            cell.youImageView.isHidden = false
+            cell.meImageView.isHidden = true
+            cell.messageView.backgroundColor = UIColor(named: K.MyColor.lightPinkColor)
+        }
         
         cell.label.text = message[indexPath.row].message
         return cell
