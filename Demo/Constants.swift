@@ -11,4 +11,11 @@ struct K {
     static let loginSegue = "LoginToChattingRoom"
     static let nibName = "MessageCell"
     static let reuseableCell = "ReuseableCell"
+    
+    struct FStore {
+        static let collectionName = "messages"
+        static let senderField = "sender"
+        static let bodyField = "body"
+        static let dateField = "date"
+    }
 }
